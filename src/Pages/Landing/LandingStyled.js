@@ -11,7 +11,7 @@ export const LandingStyled = styled.div`
   border-radius: 4px;
 
   @media (min-width: 700px) {
-    width: 450px;
+    width: 369px;
     padding: 2rem;
     margin: 0 auto;
   }

@@ -37,7 +37,7 @@ export const RegisterStyledDiv = styled.div`
   border-radius: 4px;
 
   @media (min-width: 700px) {
-    width: 450px;
+    width: 370px;
     padding: 2rem;
     margin: 0 auto;
   }

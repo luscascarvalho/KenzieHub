@@ -63,8 +63,9 @@ export const DivHomeStyled2 = styled.div`
   @media (min-width: 700px) {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     color: var(--grey-0);
   }
 `;

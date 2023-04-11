@@ -27,8 +27,10 @@ export const Home = ({ user }) => {
       </DivHomeStyled>
 
       <DivHomeStyled2>
-        <h3>Que pena! Estamos em desenvolvimento :(</h3>
-        <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
+        <div>
+          <h3>Que pena! Estamos em desenvolvimento :(</h3>
+          <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
+        </div>
       </DivHomeStyled2>
 
     </div>

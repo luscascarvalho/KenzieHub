@@ -23,7 +23,6 @@ export const Register = ({ toast }) => {
       navigate("/");
 
     } catch (error) {
-      console.error(error.response.data.message);
       toast.error(error.response.data.message);
     }
   }

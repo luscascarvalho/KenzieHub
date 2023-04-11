@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
    --primary-color: #FF577F;
    --color-primary-focus: #FF427F;
    --color-primary-negative: #59323F;
-    --grey-4: #121214;
+   --grey-4: #121214;
     --grey-3: #212529;
    --grey-2: #343B41;
    --grey-1: #868E96;

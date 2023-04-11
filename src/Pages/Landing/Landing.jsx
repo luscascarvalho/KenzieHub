@@ -26,7 +26,6 @@ export const Landing = ({ setUser, toast }) => {
 
       navigate("/home");
     } catch (error) {
-      console.error(error.response.data.message);
       toast.error(error.response.data.message);
     }
   }

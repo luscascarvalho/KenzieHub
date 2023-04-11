@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyles } from './Styles/GlobalStyles'
 
-function App() {
+const App = () => {
   const [user, setUser] = useState({});
 
   return (
