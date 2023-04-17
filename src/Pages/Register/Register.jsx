@@ -1,30 +1,23 @@
-import { Link, useNavigate } from "react-router-dom"
-import { api } from "../../Service";
+import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { RegisterSchema } from "./RegisterSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterStyled } from "./RegisterStyled";
 import { RegisterStyledDiv } from "./RegisterStyled";
+import { useContext } from "react";
+import { UserContext } from "../../Providers/UserProviders";
 
-export const Register = ({ toast }) => {
+export const Register = () => {
+
+  const { registerUser } = useContext(UserContext);
+
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(RegisterSchema),
     mode: "onChange"
   });
 
-  const navigate = useNavigate();
-
   const createUser = async (data) => {
-    try {
-      const response = await api.post('/users', data);
-
-      toast.success("Perfil criado com sucesso!");
-
-      navigate("/");
-
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
+    await registerUser(data);
   }
 
   return (

@@ -1,27 +1,38 @@
-import { useState } from 'react'
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import { Landing } from './Pages/Landing/Landing'
 import { Register } from './Pages/Register/Register'
 import { Home } from './Pages/Home/Home'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import { GlobalStyles } from './Styles/GlobalStyles'
+import { TechProvider } from './Providers/TechProviders'
+import { ProtectedRoute } from './Pages/ProtectedRoute/ProtectedRoute'
+import { PublicRoutes } from './Pages/PublicRoutes/PublicRoutes'
 
 const App = () => {
-  const [user, setUser] = useState({});
+
 
   return (
-    <div className="App">
+    <>
       <GlobalStyles />
+
       <Routes>
-        <Route path="/" element={<Landing setUser={setUser} toast={toast} />} />
-        <Route path="/register" element={<Register toast={toast} />} />
-        <Route path="/home" element={<Home user={user} />} />
+        <Route path="/" element={<PublicRoutes />} >
+          <Route index element={<Landing />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+
+        <Route path="/home" element={<ProtectedRoute />} >
+          <Route index element={
+            <TechProvider>
+              <Home />
+            </TechProvider>} />
+        </Route>
       </Routes>
 
       <ToastContainer />
-    </div>
+    </>
   )
 }
 
